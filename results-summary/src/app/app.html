@@ -1,0 +1,31 @@
+<main class="result-card">
+  <section class="result-score">
+    <h1>Your Result</h1>
+    <div class="score-circle">
+      <span class="big-number">76</span>
+      <span class="total-number">of 100</span>
+    </div>
+    <div class="result-text">
+      <h2>Great</h2>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+  </section>
+
+  <section class="summary-details">
+    <h3>Summary</h3>
+    <div class="summary-list">
+      @for (item of summaryData; track item.category) {
+      <div class="summary-item" [attr.data-category]="item.category.toLowerCase()">
+        <div class="item-title">
+          <img [src]="item.icon" [alt]="item.category">
+          <span>{{ item.category }}</span>
+        </div>
+        <div class="item-score">
+          <strong>{{ item.score }}</strong> / 100
+        </div>
+      </div>
+      }
+    </div>
+    <button class="btn-continue">Continue</button>
+  </section>
+</main>
